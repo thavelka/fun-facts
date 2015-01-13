@@ -24,13 +24,23 @@ public class FunFactsActivity extends ActionBarActivity {
         // Declare view variables, assign views from layout file
         final RelativeLayout factLayout = (RelativeLayout) findViewById(R.id.factLayout);
         final TextView factLabel = (TextView) findViewById(R.id.factTextView);
-        Button showFactButton = (Button) findViewById(R.id.showFactButton);
+        final Button showFactButton = (Button) findViewById(R.id.showFactButton);
+        // Change background color
+        int color = ColorWheel.getColor();
+        factLayout.setBackgroundColor(color);
+
+        // Change button text color
+        showFactButton.setTextColor(color);
 
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
             // Change background color
-            factLayout.setBackgroundColor(ColorWheel.getColor());
+            int color = ColorWheel.getColor();
+            factLayout.setBackgroundColor(color);
+
+            // Change button text color
+            showFactButton.setTextColor(color);
 
             // Update label to dynamic fact
             factLabel.setText(FactBook.getFact());
